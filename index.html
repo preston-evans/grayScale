@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: ID changer</title>
+        <style>
+            .container {
+                position: relative;;
+                height: 100vh;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            * {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+            .nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: black;
+                box-shadow: 0px 2px 20px black;
+            }
+            .nav a {
+                display: inline-block;
+                color: white;
+                background-color: black;
+                padding: 30px 60px;
+                text-decoration: none;
+                transition: .3s ease-in-out;
+            }
+            .nav a:hover {
+                background-color: white;
+                color: black;
+            }
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 84vh;
+                top: 0;
+                margin-top: 96px;
+                font-size: 2em;
+                overflow: scroll;
+                
+            }
+            h1 {
+                text-align: center;
+            }
+            p {
+                width: 60%;
+                margin: 26px auto 0;
+                text-align: center;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav">
+            <div>
+                <a href="#">Home</a>
+            </div>
+            <div>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">News</a>
+            </div>
+        </div>
+        <div class="overlay">
+            <h1>Test</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit distinctio tenetur, vitae velit dolorem voluptatum odio repellat neque accusamus, at hic totam voluptate ducimus officia nihil molestias quam et placeat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit distinctio tenetur, vitae velit dolorem voluptatum odio repellat neque accusamus, at hic totam voluptate ducimus officia nihil molestias quam et placeat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit distinctio tenetur, vitae velit dolorem voluptatum odio repellat neque accusamus, at hic totam voluptate ducimus officia nihil molestias quam et placeat?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit distinctio tenetur, vitae velit dolorem voluptatum odio repellat neque accusamus, at hic totam voluptate ducimus officia nihil molestias quam et placeat?</p>
+        </div>
+    <script>
+        let box = document.querySelectorAll('.container div');
+        let colors = []
+        for(let i = 0; i < box.length; i++) {
+            let count = i * 20;
+            colors.push(`rgb(${count},${count},${count})`)
+        }
+        console.log(colors)
+        for(let i = 0; i < box.length; i++) {
+            box[i].style = 'flex-grow:1;'
+            box[i].style.backgroundColor = colors[i];
+        }
+    </script>
+    </body>
+</html>
